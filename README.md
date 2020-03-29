@@ -33,7 +33,7 @@ Ejercicios básicos
 
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
    
-     <img src="Pics/Pic6.JPG" witdth="500" align="center">
+     <img src="Pics/Pic6.PNG" witdth="500" align="center">
      
      Aunque sabemos que el umbral de potencia no es el más adecuado, ya que deberiamos haberlo normalizado para que se ajustase mejor a cada una de las señales, no hemos sabido implementar la normalización de el parámetro.
 
