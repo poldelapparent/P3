@@ -100,6 +100,12 @@ Ejercicios de ampliación
   También se valorará la realización de un estudio de los parámetros involucrados. Por ejemplo, si se opta
   por implementar el filtro de mediana, se valorará el análisis de los resultados obtenidos en función de
   la longitud del filtro.
+  
+  Hemos aplicado una de las técnicas de prepocesado que se proponen, el "center clipping", a través del cual anulamos los valores de x[n] de magnitud pequeña con la finalidad de, como se expone en el enunciado de la práctica, aumentar la intensidad de los armónicos de orden elevado y aumentar la robustez de la señal frente al ruido. Para la implementación hemos calculado, para cada trama, el valor màximo de x[n] (max_x), hemos definifo el umbral de decisión (clc) como 0.03 * max_x i hemos comparado cada valor de x[n] con este umbral asignandole los valores de 0, x[n] + clc o x[n] - clc. La implementación ha sido la siguiente:
+  
+  <img src="Pics/Pic5.PNG" witdth="500" align="center">
+  
+  Una vez ajustado los valores de potencia, r1norm i rmaxnorm necesarios, hemos notado una pequeña mejoria respecto al porcentaje obtenido sin el preprocesado però sin gran relevancia, aproximadamente un 2% de mejora.
    
 
 Evaluación *ciega* del detector
