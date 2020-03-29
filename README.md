@@ -15,7 +15,7 @@ Ejercicios básicos
 
    * Complete el cálculo de la autocorrelación e inserte a continuación el código correspondiente.
    
-     <img src="Pic1.jpeg" witdth="500" align="center">
+     <img src="Pics/Pic1.jpeg" witdth="500" align="center">
 
    * Inserte una gŕafica donde, en un *subplot*, se vea con claridad la señal temporal de un sonido sonoro
      y su periodo de pitch; y, en otro *subplot*, se vea con claridad la autocorrelación de la señal y la
@@ -27,7 +27,7 @@ Ejercicios básicos
    * Determine el mejor candidato para el periodo de pitch localizando el primer máximo secundario de la
      autocorrelación. Inserte a continuación el código correspondiente.
      
-     <img src="Pic2.jpg" witdth="500" align="center">
+     <img src="Pics/Pic2.JPG" witdth="500" align="center">
 
    * Implemente la regla de decisión sonoro o sordo e inserte el código correspondiente.
 
