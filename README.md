@@ -35,7 +35,7 @@ Ejercicios básicos
    
      <img src="Pics/Pic6.PNG" witdth="500" align="center">
      
-     Aunque sabemos que el umbral de potencia no es el más adecuado, ya que deberiamos haberlo normalizado para que se ajustase mejor a cada una de las señales, no hemos sabido implementar la normalización de el parámetro.
+     Aunque sabemos que el umbral de potencia no es el más adecuado, ya que deberiamos haberlo normalizado para que se ajustase mejor a cada una de las señales, no hemos sabido implementar la normalización del parámetro.
 
 - Una vez completados los puntos anteriores, dispondrá de una primera versión del detector de pitch. El 
   resto del trabajo consiste, básicamente, en obtener las mejores prestaciones posibles con él.
