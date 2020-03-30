@@ -17,7 +17,7 @@ using namespace std;
 using namespace upc;
 
 static const char USAGE[] = R"(
-get_pitch - Pitch Detector 
+get_pitch - Pitch Detector
 
 Usage:
     get_pitch [options] <input-wav> <output-txt>
@@ -25,6 +25,9 @@ Usage:
     get_pitch --version
 
 Options:
+    -a float, --input-float-pot=float
+    -b float, --input-float-r1norm=float
+    -c float, --input-float-rmaxnorm=float
     -h, --help  Show this screen
     --version   Show the version of the project
 
@@ -36,7 +39,7 @@ Arguments:
 )";
 
 int main(int argc, const char *argv[]) {
-	/// \TODO 
+	/// \TODO
 	///  Modify the program syntax and the call to **docopt()** in order to
 	///  add options and arguments to the program.
     std::map<std::string, docopt::value> args = docopt::docopt(USAGE,
@@ -61,10 +64,22 @@ int main(int argc, const char *argv[]) {
   // Define analyzer
   PitchAnalyzer analyzer(n_len, rate, PitchAnalyzer::HAMMING, 50, 500);
 
-  /// \TODO
+  /// \HECHO
   /// Preprocess the input signal in order to ease pitch estimation. For instance,
   /// central-clipping or low pass filtering may be used.
-  
+
+  float max_x = 0, clc = 0;
+  // Buscar el valor maxim
+  for (unsigned int i = 0; i < x.size(); i++){
+    if (x[i] > max_x) max_x = x[i];
+
+    clc = 0.03 * max_x;
+    //Center clipping
+    if (abs(x[i]) < clc) x[i] = 0;
+    else if (x[i] >= clc) x[i] = x[i] - clc;
+    else x[i] = x[i] + clc;
+  }
+
   // Iterate for each frame and save values in f0 vector
   vector<float>::iterator iX;
   vector<float> f0;
@@ -85,7 +100,7 @@ int main(int argc, const char *argv[]) {
   }
 
   os << 0 << '\n'; //pitch at t=0
-  for (iX = f0.begin(); iX != f0.end(); ++iX) 
+  for (iX = f0.begin(); iX != f0.end(); ++iX)
     os << *iX << '\n';
   os << 0 << '\n';//pitch at t=Dur
 
